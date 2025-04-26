@@ -10,11 +10,9 @@ import java.time.Clock
 
 object JwtAuthenticator {
   private val config = ConfigFactory.load()
-  // Делаем публичным для доступа из StorageRoutes
-  val secretKey = "your-secret-key-here" // Hard-coded for now
+  val secretKey = "Iw1t2hWPH5Rb69ZR0woGEWMTLF4Xp9fxIQwIhvwdNh8="
   val algorithm = JwtAlgorithm.HS256
   
-  // Явно указываем Clock для методов, которые требуют его
   implicit val clock: Clock = Clock.systemUTC()
 
   def authenticate: Directive1[String] = 
